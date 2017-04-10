@@ -9,8 +9,8 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
-found{
-  margin: 25px;
+found-items{
+  float: right;
 }
 .loader {
   display: none;
