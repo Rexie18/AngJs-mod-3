@@ -11,16 +11,16 @@
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div  class="form-group">
-      <input ng-model="MenuItems" type="text" placeholder="search term" class="form-control">
+      <input ng-model="enteredValue" type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button ng-click= "menu.logMenuItems()" class="btn btn-primary">Narrow It Down For Me!</button>
+      <button ng-Click="findValue(enteredValue)" class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
     
 
 
     <!-- found-items should be implemented as a component -->
-    <found-items><ul><li ng-repeat="category in menu.categories"><button class="btn btn-default" ng-click="menu.remove($index)"> 
+    <found-items><ul><li ng-repeat="MenuItem in menu.result"> Menu: {{MenuItem.name}} {{MenuItem.shortname}}<button class="btn btn-default" ng-click="menu.remove($index)"> 
       Don't want this one!</button></li></ul></found-items>
       
   </div>
