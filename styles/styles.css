@@ -10,7 +10,8 @@ input[type="text"] {
   margin-left: 10px;
 }
 found-items{
-  float: right;
+  margin: 5px;
+  float: left;
 }
 .loader {
   display: none;
