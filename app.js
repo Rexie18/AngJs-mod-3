@@ -52,3 +52,6 @@ function MenuCategoriesService($http, ApiBasePath) {
 }
 
 })();
+
+
+http://plnkr.co/edit/452nFDmxnCROsM4m4Ylf?p=preview
