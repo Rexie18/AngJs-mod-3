@@ -22,6 +22,10 @@ function MenuCategoriesController(MenuCategoriesService) {
     })
   };
 
+  menu.remove = function (itemIndex){
+  MenuCategoriesService.remove(itemIndex)
+ };
+  
 }
 
 
@@ -42,6 +46,9 @@ function MenuCategoriesService($http, ApiBasePath) {
     return response;
   };
 
+  service.remove = function(itemIndex){
+		service.response.splice(itemIndex,1);
+		};
 }
 
 })();
