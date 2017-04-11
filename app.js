@@ -15,7 +15,7 @@ function MenuCategoriesController(MenuCategoriesService) {
     var promise = MenuCategoriesService.getMenuForCategory(shortName);
 
     promise.then(function (response) {
-      menu.categories = response.data;
+      menu.result = response.data;
     })
     .catch(function (error) {
       return("Please Enter Menu Item.");
