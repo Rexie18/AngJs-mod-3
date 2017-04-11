@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('MenuCategoriesApp', [])
+angular.module('NarrowItDownApp', [])
 .controller('MenuCategoriesController', MenuCategoriesController)
 .service('MenuCategoriesService', MenuCategoriesService)
 .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
