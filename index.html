@@ -22,7 +22,11 @@
 
 
     <!-- found-items should be implemented as a component -->
-    <found-items><ul><li ng-repeat="category in searchMenu.result">{{ response.data}}</li><button ng-Click="searchMenu.remove($index)" class="btn btn-primary">I don't want this!</button></ul></found-items>
+    <found-items>
+      <ul><li ng-repeat="category in searchMenu.result"> {{ category.short_name }} </li>
+        <button ng-Click="searchMenu.remove($index)" class="btn btn-primary">I don't want this!</button>
+      </ul>
+     </found-items>
       
   </div>
 
