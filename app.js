@@ -41,6 +41,7 @@ function MenuCategoriesService($http, ApiBasePath) {
       params: {
         category: shortName
       }
+	   
     });
 
     return response;
@@ -54,15 +55,15 @@ function MenuCategoriesService($http, ApiBasePath) {
 })();
 
 
-http://plnkr.co/edit/452nFDmxnCROsM4m4Ylf?p=preview
+// http://plnkr.co/edit/452nFDmxnCROsM4m4Ylf?p=preview
 
 
-app.controller('MyController', function($http) {
-    var vm = this;
-    vm.mydata = [];
+// app.controller('MyController', function($http) {
+//     var vm = this;
+//     vm.mydata = [];
 
-    $http.get(URI)
-        .then(function(result) {
-          console.log(result);
-          vm.mydata = result.data;
-         });
+//     $http.get(URI)
+//         .then(function(result) {
+//           console.log(result);
+//           vm.mydata = result.data;
+//          });
