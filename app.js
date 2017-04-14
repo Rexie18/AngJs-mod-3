@@ -9,20 +9,20 @@ angular.module('NarrowItDownApp', [])
 
 MenuCategoriesController.$inject = ['MenuCategoriesService'];
 function MenuCategoriesController(MenuCategoriesService) {
-  var menu = this;
+  var searchMenu = this;
 
-    menu.logMenuItems = function (shortName) {
-    var promise = MenuCategoriesService.getMenuForCategory(shortName);
+    searchMenu.logMenuItems = function (enteredValue) {
+    var promise = MenuCategoriesService.getMenuForCategory(enteredValue);
 
     promise.then(function (response) {
-      menu.result = response.data;
+      searchMenu.result = response.data;
     })
     .catch(function (error) {
       return("Please Enter Menu Item.");
     })
   };
 
-  menu.remove = function (itemIndex){
+  searchMenu.remove = function (itemIndex){
   MenuCategoriesService.remove(itemIndex)
  };
   
@@ -34,12 +34,12 @@ function MenuCategoriesService($http, ApiBasePath) {
   var service = this;
 
   
-  service.getMenuForCategory = function (shortName) {
+  service.getMenuForCategory = function (enteredValue) {
     var response = $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json"),
       params: {
-        category: shortName
+        category: enteredValue
       }
 	   
     });
