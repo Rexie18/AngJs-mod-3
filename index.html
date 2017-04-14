@@ -9,21 +9,22 @@
     <script src="app.js"></script>
   </head>
 <body>
-   <div  class="container" ng-controller = 'MenuCategoriesController as menu'>
+   <div  class="container" ng-controller = 'MenuCategoriesController as searchMenu'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div  class="form-group">
       <input ng-model="enteredValue" type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button ng-Click="findValue(enteredValue)" class="btn btn-primary">Narrow It Down For Me!</button>
+      <button ng-Click="searchMenu.logMenuItems(enteredValue)" class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
     
 
 
     <!-- found-items should be implemented as a component -->
-    <found-items><ul><li ng-repeat="MenuItem in menu.result"> Menu: {{MenuItem.name}} {{MenuItem.shortname}}<button class="btn btn-default" ng-click="menu.remove($index)"> 
-      Don't want this one!</button></li></ul></found-items>
+    <found-items><ul><li ng-repeat="category in searchMenu.result">
+          {{ category.short_name }} {{ category.name }} </li>
+      <button ng-Click="searchMenu.remove($index)" class="btn btn-primary">I don't want this!</button></ul></found-items>
       
   </div>
 
