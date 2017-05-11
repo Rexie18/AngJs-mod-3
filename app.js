@@ -4,11 +4,10 @@
 angular.module('NarrowItDownApp',[])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.directive('foundItems', FoundDirective)
-.config(function($sceProvider);
+.directive('foundItems', FoundDirective);
 
 
-function FoundDirective($sceProvider.enabled(false)) {
+function FoundDirective() {
   var ddo = {
     templateUrl:'https://davids-restaurant.herokuapp.com/menu_items.json',
     scope: {
@@ -16,25 +15,25 @@ function FoundDirective($sceProvider.enabled(false)) {
       searchResult:"<foundList",
       onRemove : "&"
     }
-  };
+  }
 
-  return ddo;
+  return ddo
 }
 
-NarrowItDownController.$inject=['MenuSearchService'];
+NarrowItDownController.$inject=['MenuSearchService']
 function NarrowItDownController (MenuSearchService) {
     var search = this;
     search.searchTerm = "";
     search.nothing = false;
 
     search.getList = function(){
-      if(search.searchTerm.length === 0) {
+      if(search.searchTerm.length == 0) {
         search.nothing = true;
         search.found = [];
       } else {
          MenuSearchService.getMatchedMenuItems(search.searchTerm)
          .then(function(response){
-           if (response.length===0) {
+           if (response.length==0) {
              search.nothing = true;
            } else{
              search.nothing = false;
@@ -49,7 +48,7 @@ function NarrowItDownController (MenuSearchService) {
     };
 }
 
-MenuSearchService.$inject = ['$http'];
+MenuSearchService.$inject = ['$http']
 function MenuSearchService ($http) {
   var service = this;
   var foundItems = [];
@@ -65,7 +64,7 @@ function MenuSearchService ($http) {
     return response.then(function(response){
       var menus = response.data.menu_items;
       for (var i=0;i<menus.length;i++) {
-        var menuDesc = menus[i].description.toLowerCase();
+        var menuDesc = menus[i].description.toLowerCase()
         if (menuDesc.includes(searchTerm.toLowerCase())) {
           foundItems.push(menus[i]);
         }
@@ -73,7 +72,7 @@ function MenuSearchService ($http) {
       return foundItems;
     })
     .catch(function(error){
-      console.log("Something went wrong~!");
+      console.log("Something went wrong~!")
     });
   };
 
@@ -85,6 +84,7 @@ function MenuSearchService ($http) {
 }
 
 })();
+
 
 // (function(){
 // 'use strict';
