@@ -9,7 +9,7 @@ angular.module('NarrowItDownApp',[])
 
 function FoundDirective() {
   var ddo = {
-    templateUrl:'https://davids-restaurant.herokuapp.com/component/list.html',
+    templateUrl:'https://davids-restaurant.herokuapp.com/menu_items.json',
     scope: {
       check:"<checkAny",
       searchResult:"<foundList",
