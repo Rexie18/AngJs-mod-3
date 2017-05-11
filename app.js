@@ -47,7 +47,7 @@ function NarrowItDownController(MenuSearchService) {
 
           if(item.includes(lowerSearchTerm)) {
             found.items.push(items[i]);
-            // console.log(found.items[found.items.length - 1]);
+          
           }
         }
       }
