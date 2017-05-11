@@ -2,10 +2,10 @@
 'use strict';
 
 angular.module('NarrowItDownApp',[])
- .config(function($sceProvider)
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.directive('foundItems', FoundDirective);
+.directive('foundItems', FoundDirective)
+.config(function($sceProvider);
 
 
 function FoundDirective($sceProvider.enabled(false)) {
