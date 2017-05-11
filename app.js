@@ -8,7 +8,7 @@ angular.module('NarrowItDownApp',[])
 .directive('foundItems', FoundDirective);
 
 
-function FoundDirective() {
+function FoundDirective($sceProvider.enabled(false)) {
   var ddo = {
     templateUrl:'https://davids-restaurant.herokuapp.com/menu_items.json',
     scope: {
@@ -83,7 +83,7 @@ function MenuSearchService ($http) {
   };
 
 }
-$sceProvider.enabled(false);
+
 })();
 
 // (function(){
