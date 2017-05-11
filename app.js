@@ -1,7 +1,8 @@
 (function(){
 'use strict';
 
-angular.module('NarrowItDownApp',[]).config(function($sceProvider)
+angular.module('NarrowItDownApp',[])
+ .config(function($sceProvider)
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundDirective);
