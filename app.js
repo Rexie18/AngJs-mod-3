@@ -9,7 +9,7 @@ angular.module('NarrowItDownApp', [])
 
 function FoundItemsDirective() {
   var ddo = {
-    templateUrl: 'foundItems.html',
+    templateUrl: 'https://davids-restaurant.herokuapp.com/menu_items',
     scope: {
       items: '<',
       menuItem: '@menuItem',
